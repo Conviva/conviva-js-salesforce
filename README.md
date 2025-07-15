@@ -30,17 +30,8 @@ Before you begin, ensure you have the following:
 
 ### 3. Include the Sensor
 
-Add the following script tag in your site's **common head include** (e.g., `head.isml`), **before any other scripts**:
-
-```html
-<script src="${StaticURL}/conviva/convivaAppTracker.js"></script>
-```
-
----
-
-### 4. Initialize the Tracker
-
-Immediately after including the sensor, add this snippet in `head.isml`:
+ **common head include** (e.g., `head.isml`), **before any other scripts**:
+In your site’s **base package** (e.g. app_storefront_base/cartridge/templates/default/common/**htmlHead.isml**), **before any other scripts**:
 
 ```html
 <script>
@@ -56,6 +47,16 @@ Immediately after including the sensor, add this snippet in `head.isml`:
 }(window, "apptracker"));
 </script>
 
+<script src="${StaticURL}/conviva/convivaAppTracker.js"></script>
+```
+
+---
+
+### 4. Initialize the Tracker
+
+Immediately after including the sensor, add this snippet in `head.isml`:
+
+```html
 <script>
 window.apptracker('convivaAppTracker',
   {     
@@ -80,7 +81,7 @@ If your site has a logged-in customer ID (e.g., `customer.profile.customerNo`), 
 
 ```html
 <script>   
-window.apptracker('setUserId', '${Customer.profile.customerNo}');
+window.apptracker('setUserId', '${customer.profile.customerNo}');
 </script>
 ```
 
