@@ -30,7 +30,6 @@ Before you begin, ensure you have the following:
 
 ### 3. Include the Sensor
 
- **common head include** (e.g., `head.isml`), **before any other scripts**:
 In your site’s **base package** (e.g. app_storefront_base/cartridge/templates/default/common/**htmlHead.isml**), **before any other scripts**:
 
 ```html
